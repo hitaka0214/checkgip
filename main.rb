@@ -10,7 +10,7 @@ url = "http://www.ugtop.com/spill.shtml"
 doc = Nokogiri::HTML(open(url))
 
 # IPアドレスを取得
-gip = doc.xpath('//tr[4]/td[2]/p/font').text
+gip = doc.xpath('//tr[2]/td').text
 
 # IPアドレスの形式でなければエラー
 if ( IPAddr.new(gip) ).ipv4? or ( IPAddr.new(gip).ipv6? )
